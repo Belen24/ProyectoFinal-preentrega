@@ -1,0 +1,368 @@
+/*font-family: 'Livvic', sans-serif;
+font-family: 'Lobster', cursive;*/
+
+/*ESTILOS GLOBALES*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: livvic;
+}
+
+h1, h2, h3, p, a, input, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*HEADER*/
+
+.contenedor-logoempresa {
+    background-color: rgb(38, 6, 39);
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.img-logo {
+    width: 15%;
+}
+
+h1 {
+    font-family:livvic, sans-serif;
+    font-style:italic;
+    color: rgb(238, 195, 222);
+}
+
+.contenedor-global { 
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: rgb(38, 6, 39);
+}
+
+.contenedor-principal{
+    padding: 2rem;
+    padding-right: 0;
+    color: aliceblue;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bi {
+    padding-right: 1rem;
+}
+
+/*ESTILO BARRA NAVEGACION DE CATEGORIAS*/
+.boton-carrito {
+    margin-top: 2rem;
+}
+
+.numero {
+    color:aliceblue ;
+    padding-left: 1rem;
+}
+
+.boton-categoria {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0;
+    color: aliceblue;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    
+}
+
+.boton-categoria.active {
+    background-color: aliceblue;
+    color: blueviolet;
+    width: 100%;
+    border-top-left-radius: 1rem ;
+    border-bottom-left-radius: 1rem ;
+    position: relative;
+}
+
+.boton-categoria.active::before{
+    content:'';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 aliceblue;
+}
+
+.boton-categoria.active::after{
+    content:'';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -.1rem 0 aliceblue;
+}
+
+
+/*MAIN*/
+main {
+    background-color:aliceblue;
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 5rem;
+}
+
+.titulo-principal {
+    color:blueviolet;
+    font-weight: bold;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-producto { 
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 10rem;
+    border-radius: 1rem;
+}
+
+.producto {
+    background-color: rgba(219, 189, 218, 0.3);
+    border-radius: 1rem;
+}
+
+.producto-img {
+    max-width: 100%;
+   
+}
+
+.producto-nombre {
+    background-color: rgb(131 85 121);
+    padding: .5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    text-align: center;
+    
+}
+
+p {
+    color: aliceblue;
+}
+
+.producto-titulo {
+    font-size: 1.25rem;
+    color:rgb(218, 135, 230);
+}
+
+
+
+.boton-compra {
+    border: 0;
+    background-color: aliceblue;
+    color: rgb(218, 135, 230);
+    font-weight: bold;
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid aliceblue;
+    transition: background-color .2s, color .2s;
+}
+
+.boton-compra:hover {
+    background-color: rgb(116, 8, 92);
+    color: aliceblue;
+}
+
+.img-footer {
+    width: 5%;
+}
+
+small {
+    color: aliceblue;
+    font-size: 1rem;
+    font-style:italic;
+}
+
+
+/*CARRITO DE COMPRAS*/
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem
+}
+
+.mensaje-compra {
+    color: blueviolet;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: italic;
+
+}
+
+.carro-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carro-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(219, 189, 218);
+    color: blueviolet;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.img-carrito {
+    width: 4rem;
+    border-radius: 1rem;
+    background-color: rgb(17, 1, 1);
+}
+
+h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.prod-cantidad, .prod-precio, .prod.subtotal {
+    text-align: end;
+}
+
+.boton-eliminar { 
+    border: 0;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+}
+
+.carro-final {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.boton-vaciar {
+    border: 0;
+    background-color: rgb(116, 8, 92);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: aliceblue;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.carro-seccion-derecha {
+    display: flex;
+}
+
+.carro-total-compra { 
+    display: flex;
+    gap: 1rem;
+    border: 0;
+    background-color: rgb(219, 189, 218);
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: blueviolet;
+    font-weight: bolder;
+    
+}
+
+.boton-comprar {
+    border: 0;
+    background-color:rgb(116, 8, 92);
+    padding: 1rem;
+    color: aliceblue;
+    font-weight:bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.disabled {
+    display: none;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width:576px){
+    .contenedor-producto {
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor-principal {
+        padding: 0;
+        font-size: 0.6rem;
+    }
+    main {
+        padding: 1rem;
+       
+    }
+    .titulo-principal{
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .contenedor-producto{
+        gap:1rem;
+        max-width: 80%;
+        margin: 1rem;
+    }
+    .producto-titulo{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    .boton-compra{
+        font-size: 0.8rem;
+    }
+  
+    
+   
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width:576px){
+    .boton-vaciar {
+        font-size: 0.5rem ;
+    }
+    .boton-comprar {
+        font-size: 0.5rem;
+    }
+    .carro-producto {
+        flex-direction: column;
+        text-align: center;
+    }
+    .carro-final{
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+    }
+   
+}
+
