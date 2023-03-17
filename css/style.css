@@ -323,7 +323,13 @@ h3 {
 
 /*MEDIA QUERIES*/
 
-@media screen and (max-width:576px){
+@media screen and (max-width:720px){
+
+    .detalle-clima{
+        gap: 0.5rem;
+        font-size: 12px;
+        border-color: aliceblue;
+    }
     .contenedor-producto {
         display: flex;
         flex-direction: column;
