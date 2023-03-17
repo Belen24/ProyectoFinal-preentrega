@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@200;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Silver Stars</title>
 </head>
@@ -17,6 +18,10 @@
 <body>
   <!--ENCABEZADO DE LA EMPRESA-->
   <header class="contenedor-logo">
+    <div id="api">
+      <!--RENDERIZACIÓN API CLIMA DESDE JS-->
+    </div>
+
     <div class="contenedor-logoempresa">
         <img class="img-logo" src="./img/logo.png" alt="logo-empresa">
         <h1>Sylver Stars</h1>
@@ -62,6 +67,7 @@
     </div>
   </footer>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

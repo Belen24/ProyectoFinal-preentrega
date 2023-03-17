@@ -73,6 +73,25 @@ function generarBotonEliminar() {
 
 //ELIMINACION DEL PRODUCTO EN EL NAVEGADOR Y LOCAL STORAGE
 function eliminarProducto(e) {
+
+    Toastify({
+        text: "Producto eliminado",
+        duration: 2000,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #835579, #DA87E6)",
+          borderRadius: "1.5rem"
+        },
+        offset: {
+            x: '2em', 
+            y: '3em' 
+          },
+        onClick: function(){} 
+      }).showToast();
+
     let idBtnEliminar = e.currentTarget.id;
     let index = carroCompras.findIndex(producto =>  producto.id === idBtnEliminar);
 
@@ -90,9 +109,30 @@ botonVaciar.addEventListener("click", vaciarCarro)
 
 function vaciarCarro(){
 
-    carroCompras.length = 0;
-    localStorage.setItem("carro-compras", JSON.stringify (carroCompras));
-    productosEnCarrito();
+    Swal.fire({
+        title: 'Estás seguro?',
+        text: "Se eliminarán todos tus productos!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#74085C',
+        cancelButtonColor: '#8A2BE2',
+        confirmButtonText: 'Si, estoy seguro!',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            carroCompras.length = 0;
+            localStorage.setItem("carro-compras", JSON.stringify (carroCompras));
+            productosEnCarrito();
+
+            Swal.fire(
+                'Productos eliminados!',
+                'Tu carrito esta vacío <i class="bi bi-emoji-frown"></i>',
+                'success'
+          )
+        }
+      })
+
+   
 
 }
 
@@ -109,11 +149,17 @@ botonComprar.addEventListener("click", mensajeDeComrpa)
 
 function mensajeDeComrpa(){
 
+     
+    Swal.fire(
+        'Muchas gracias por tu compra!',
+        'Vuelve pronto <i class="bi bi-emoji-kiss"></i>',
+        'success'
+    )
+
     carroCompras.length = 0;
     localStorage.setItem("carro-compras", JSON.stringify (carroCompras));
 
     productosEnCarrito();
 
-    mensajeCompra.classList.remove ("disabled");
 
 }

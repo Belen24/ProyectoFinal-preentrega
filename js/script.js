@@ -397,6 +397,25 @@ numeroCarrito();
 //FUNCION PARA EVITAR DUPLICIDAD DE CARGA EN UN PRODUCTO Y GUARDAR DATOS EN LOCAL STORAGE
 function productoCarrito(e) {
 
+    Toastify({
+        text: "Producto agregado",
+        duration: 2000,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #835579, #DA87E6)",
+          borderRadius: "1.5rem"
+        },
+        offset: {
+            x: '2em', 
+            y: '3em' 
+          },
+        onClick: function(){} 
+      }).showToast();
+
+
     let idBoton = e.target.id;
     //console.log (id);
     let productoSeleccionado = productos.find(producto => producto.id === idBoton);
@@ -423,5 +442,37 @@ function numeroCarrito(){
     let nuevoNumero = carroCompras.reduce ((acc, producto) => acc + producto.cantidad, 0)
 
     numero.innerText = nuevoNumero;
+
+}
+
+//FETCH API CLIMA
+
+let contenedorApi = document.getElementById("api");
+navigator.geolocation.getCurrentPosition(mostrar_posicion)
+
+function mostrar_posicion (posicion){
+
+    let latitud = posicion.coords.latitude;
+    let longitud = posicion.coords.longitude;
+    let key = "ae6990f1ce8b27274472a9e1c9e46a83";
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${key}&units=metric&lang=es`)
+    .then ( response => response.json() )
+    .then ( data => {
+
+        let api =document.createElement("div");
+        api.className = "clima"
+        api.innerHTML = `
+            <ul class="detalle-clima">
+            <li>Localidad <i class="bi bi-geo-alt-fill"></i>: ${data.name}</li>
+            <li>Tiempo para hoy <i class="bi bi-emoji-sunglasses-fill"></i>: ${data.weather[0].description}</li>
+            <li>Temperatura <i class="bi bi-thermometer-half"></i>: ${data.main.temp} °</li>
+            </ul>
+            `;
+        
+            contenedorApi.append(api);
+
+                    
+    } )
 
 }

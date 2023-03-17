@@ -24,6 +24,21 @@ a {
 
 /*HEADER*/
 
+.clima{
+    background-color: black;
+    
+}
+.detalle-clima{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 5rem;
+    color: rgb(238, 195, 222);
+    font-style: oblique;
+    font-size: 14px;
+    padding: 0.7rem;
+}
+
 .contenedor-logoempresa {
     background-color: rgb(38, 6, 39);
     display: flex;

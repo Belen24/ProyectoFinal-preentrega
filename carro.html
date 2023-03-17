@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Carrito de compras</title>
 </head>
 <body>
 
@@ -42,13 +44,13 @@
       <main class="cuerpo-carrito">
         <h2 class="titulo-principal" >Carrito de compras</h2>
         <div class="contenedor-carrito">
-          <p class="mensaje-compra disabled">Muchas gracias por tu compra. Vuelve pronto!! <i class="bi bi-bag-heart-fill"></i></p>
+          
           <div id="carro-productos" class="carro-productos">
                     <!--RENDER PRODUCTOS AGREGADOS AL CARRO DESDE JS-->
                    
           </div>
           
-          <div id="carro-final" class="carro-final " >
+          <div id="carro-final" class="carro-final" >
             <div class="carro-seccion-izqierda">
               <button id="boton-vaciar" class="boton-vaciar">Vaciar carrito</button>
             </div>
@@ -59,18 +61,21 @@
               </div>
               <button id="boton-comprar" class="boton-comprar"> Comprar ahora</button>
             </div>
-          </div>
+          </div>       
         </div>
       </main>
     </div>
 
-  <footer>
-    <div class="contenedor-logoempresa">
-      <img class="img-footer" src="./img/logo.png" alt="logo-empresa">
-      <small>Sylver Stars</small>
-    </div>
-  </footer>
+    <footer>
+      <div class="contenedor-logoempresa">
+        <img class="img-footer" src="./img/logo.png" alt="logo-empresa">
+        <small>Sylver Stars</small>
+      </div>
+    </footer>
+  </div>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="sweetalert2.all.min.js"></script>
   <script src="./js/carro.js"></script>
 </body>
 </html>
